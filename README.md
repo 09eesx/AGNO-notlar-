@@ -40,19 +40,11 @@ Sistem Agno framework'ünün 4 temel katmanı üzerine kurulmuştur:
 | --- | --- | --- |
 | **Kısa Süreli** | Mevcut oturumdaki konuşma geçmişi ve state yönetimi.
 
- | SQLite / RAM 
+ | SQLite / RAM || **Uzun Süreli** | Kullanıcı tercihleri (örn: "Hep kıdemli adaylar getir").
 
- |
-| **Uzun Süreli** | Kullanıcı tercihleri (örn: "Hep kıdemli adaylar getir").
+ | Mem0 / User Memory || **Özetleme** | Uzun sohbetlerin bağlamı korunarak sıkıştırılması.
 
- | Mem0 / User Memory 
-
- |
-| **Özetleme** | Uzun sohbetlerin bağlamı korunarak sıkıştırılması.
-
- | Session Summary 
-
- |
+ | Session Summary |
 
 ## 📊 Performans ve Doğruluk Değerlendirmesi
 
