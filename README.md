@@ -36,15 +36,12 @@ Sistem Agno framework'ünün 4 temel katmanı üzerine kurulmuştur:
 
 ## 🧠 Bellek Türleri ve Kullanımı
 
-| Tür | Açıklama | Teknoloji |
-| --- | --- | --- |
-| **Kısa Süreli** | Mevcut oturumdaki konuşma geçmişi ve state yönetimi.
+| Tür           | Açıklama                                                                 | Teknoloji           |
+|---------------|--------------------------------------------------------------------------|---------------------|
+| **Kısa Süreli** | Mevcut oturumdaki konuşma geçmişi ve state yönetimi.                      | SQLite / RAM        |
+| **Uzun Süreli** | Kullanıcı tercihleri (örn. “Hep kıdemli adaylar getir”).                  | Mem0 / User Memory  |
+| **Özetleme**   | Uzun sohbetlerin bağlamı korunarak sıkıştırılması.                        | Session Summary     |
 
- | SQLite / RAM || **Uzun Süreli** | Kullanıcı tercihleri (örn: "Hep kıdemli adaylar getir").
-
- | Mem0 / User Memory || **Özetleme** | Uzun sohbetlerin bağlamı korunarak sıkıştırılması.
-
- | Session Summary |
 
 ## 📊 Performans ve Doğruluk Değerlendirmesi
 
@@ -58,7 +55,7 @@ Sistem Agno framework'ünün 4 temel katmanı üzerine kurulmuştur:
 
 ## 🧩 Workflow Design (Figma)
 
-![Workflow Note](assets/figma/workflow_note.png)
+![Workflow Note](assets/figma/workflow_note.jpg)
 
 🔗 **Interactive Figma Board:**  
 https://www.figma.com/board/f4OKvM7hf57WODcvAy3ei2/workflow_note?t=HOaMqdeYqSh3oXQB-1
