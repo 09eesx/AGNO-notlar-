@@ -4,20 +4,16 @@ Bu proje, doğal dildeki aday arama sorgularını (NLQ) analiz ederek **SQL filt
 
 ## 🚀 Temel Özellikler
 
-* 
-**Hibrit Arama Mimarisi:** Yapılandırılmış veriler (yaş, okul) için SQL; soyut yetenekler (iletişim becerisi, liderlik) için semantik arama.
+* **Hibrit Arama Mimarisi:** Yapılandırılmış veriler (yaş, okul) için SQL; soyut yetenekler (iletişim becerisi, liderlik) için semantik arama.
 
 
-* 
-**Gelişmiş Mantık Yürütme (Reasoning):** `reasoning=True` bayrağı ile sorguların neden ve nasıl ayrıştırıldığını gösteren şeffaf Chain-of-Thought (CoT) süreci.
+* **Gelişmiş Mantık Yürütme (Reasoning):** `reasoning=True` bayrağı ile sorguların neden ve nasıl ayrıştırıldığını gösteren şeffaf Chain-of-Thought (CoT) süreci.
 
 
-* 
-**Dinamik Bellek Yönetimi:** Oturum bazlı kısa süreli hafıza ve Mem0 entegrasyonu ile uzun vadeli kullanıcı tercihlerini hatırlama.
+* **Dinamik Bellek Yönetimi:** Oturum bazlı kısa süreli hafıza ve Mem0 entegrasyonu ile uzun vadeli kullanıcı tercihlerini hatırlama.
 
 
-* 
-**Reranker Optimizasyonu:** Embedding sonuçlarını CrossEncoder (Cohere veya Sentence Transformers) kullanarak yeniden sıralayan yüksek isabetli sonuç katmanı.
+* **Reranker Optimizasyonu:** Embedding sonuçlarını CrossEncoder (Cohere veya Sentence Transformers) kullanarak yeniden sıralayan yüksek isabetli sonuç katmanı.
 
 
 
@@ -25,19 +21,16 @@ Bu proje, doğal dildeki aday arama sorgularını (NLQ) analiz ederek **SQL filt
 
 Sistem Agno framework'ünün 4 temel katmanı üzerine kurulmuştur:
 
-1. 
-**Flags:** Modelin zekasına güvenilen en alt seviye yapılandırmalar (örn: `reasoning=True`).
+1. **Flags:** Modelin zekasına güvenilen en alt seviye yapılandırmalar (örn: `reasoning=True`).
 
 
-2. 
-**Tools:** SQLTools, WebTools ve DockerTools gibi dış sistemlerle etkileşimi sağlayan yetenekler.
+2. **Tools:** SQLTools, WebTools ve DockerTools gibi dış sistemlerle etkileşimi sağlayan yetenekler.
 
 
 3. **Agents:** Karar mekanizması; Router Agent, SQL Parser Agent ve Semantic Agent.
 
 
-4. 
-**Workflows:** Çok adımlı süreçlerin (Sorgu Parse -> DB Arama -> Rerank -> Özetleme) yönetimi.
+4. **Workflows:** Çok adımlı süreçlerin (Sorgu Parse -> DB Arama -> Rerank -> Özetleme) yönetimi.
 
 
 
@@ -47,32 +40,21 @@ Sistem Agno framework'ünün 4 temel katmanı üzerine kurulmuştur:
 | --- | --- | --- |
 | **Kısa Süreli** | Mevcut oturumdaki konuşma geçmişi ve state yönetimi.
 
- | SQLite / RAM 
+ | SQLite / RAM || **Uzun Süreli** | Kullanıcı tercihleri (örn: "Hep kıdemli adaylar getir").
 
- |
-| **Uzun Süreli** | Kullanıcı tercihleri (örn: "Hep kıdemli adaylar getir").
+ | Mem0 / User Memory || **Özetleme** | Uzun sohbetlerin bağlamı korunarak sıkıştırılması.
 
- | Mem0 / User Memory 
-
- |
-| **Özetleme** | Uzun sohbetlerin bağlamı korunarak sıkıştırılması.
-
- | Session Summary 
-
- |
+ | Session Summary |
 
 ## 📊 Performans ve Doğruluk Değerlendirmesi
 
-* 
-**Reasoning Etkisi:** SQL Agent doğruluğu mantık yürütme ile %40'tan %80'e çıkmaktadır.
+* **Reasoning Etkisi:** SQL Agent doğruluğu mantık yürütme ile %40'tan %80'e çıkmaktadır.
 
 
-* 
-**Router Başarısı:** Sorguları doğru ajana yönlendirme skoru 10 üzerinden 8.6 olarak ölçülmüştür.
+* **Router Başarısı:** Sorguları doğru ajana yönlendirme skoru 10 üzerinden 8.6 olarak ölçülmüştür.
 
 
-* 
-**Reranking:** Basit embedding (Bi-Encoder) hızlı filtreleme yaparken, Reranker (CrossEncoder) bağlamsal etkileşim ile en alakalı adayları en üste taşır.
+* **Reranking:** Basit embedding (Bi-Encoder) hızlı filtreleme yaparken, Reranker (CrossEncoder) bağlamsal etkileşim ile en alakalı adayları en üste taşır.
 
 ## 🧩 Workflow Design (Figma)
 
